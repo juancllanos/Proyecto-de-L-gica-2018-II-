@@ -140,3 +140,4 @@ for i in pila2:
 
 if(Condicional == True):
 	print "Las formulas son equivalentes"
+#----------------FIN--------------------------------
