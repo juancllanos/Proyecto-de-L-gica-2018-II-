@@ -97,39 +97,30 @@ def Vi(A, I):
 
 #EJERCICIO 4:
 
-letProp = ['p','q','r']
-interps = [] # Creamos la lsita de las posibles interpretaciones
+letProp = ['p','q','r'] #Creamos la lista de letras proposicionales
+interps = [] # Creamos la lista de todas las interpretaciones posibles 
 aux = {}     # Creamos la primera intrepretacion
 
 for i in letProp:   
-	aux[i] = 1
-interps.append(aux) 
-# En este primer for inicializamos aux como verdadera para toda letra proposicional
+	aux[i] = 1 # En este primer for inicializamos aux como verdadera para toda letra proposicional
+interps.append(aux) #Incluimos esta interpretación en la lista de interpretaciones
+
 for a in letProp:
-	interps_aux = [j for j in interps]
-# Esta lista nos ayuda a tener las interpretaciones que llevemos
+	
+	interps_aux = [j for j in interps] # Esta lista auxiliar contiene las interpretaciones que ya hemos guardado
 
 	for i in interps_aux:
-		aux1 = {}
+		aux1 = {} #Se crea un diccionario auxiliar que va a guardar la interpretación que se va a crear
 
 		for b in letProp:
-			if a== b:
-				aux1[b] = 1 - i[b]
+			if a== b: #Se comparan las letras para cambiarles su valor de verdad 
+				aux1[b] = 1 - i[b]  #Si son iguales, cambia el valor de verdad de la letra en el diccionario auxiliar
 			else:
-				aux1[b] = i[b]
+				aux1[b] = i[b] #Si no son, se deja el mismo valor de verdad (se deja el mismo valor de verdad para todas las letras distintas)
 		
-		interps.append(aux1)
+		interps.append(aux1) #Se incluye esta nueva interpretación en la lista original de interpretaciones
 
-#		for j in range(len(letProp)):
-#			for b in letProp:
-#				if letProp[i] == letProp[b]:
-#					aux1[b] == 1-i[j][b]
-# En este paso si estamos comparando letras proposicionales iguales les cambiamos la interpretacion
-#				else:
-#					aux1[b] = i[j][b]
-# Si no entonces se deja igual la interpretacion
-#		interps.append(aux1)
-# Por ultimo se agrega a la lista de interpretaciones
+#Así se obtienen todas las interpretaciones posibles
 
 print "Interpretaciones:"
 for i in interps:
