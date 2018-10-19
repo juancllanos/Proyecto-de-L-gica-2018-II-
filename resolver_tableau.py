@@ -22,7 +22,7 @@ start = timer()
 
 # Creamos las letras proposicionales
 letrasProposicionales = []
-for i in range(1, 64):
+for i in range(1, 65):
     letrasProposicionales.append(str(i))
 
 # print "Letras proposicionales: ", letrasProposicionales
