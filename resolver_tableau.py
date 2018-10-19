@@ -22,7 +22,7 @@ start = timer()
 
 # Creamos las letras proposicionales
 letrasProposicionales = []
-for i in range(1, 10):
+for i in range(1, 64):
     letrasProposicionales.append(str(i))
 
 # print "Letras proposicionales: ", letrasProposicionales
@@ -32,24 +32,30 @@ conjunciones = '' # Para ir guardando las conjunciones de óctuples de disyuncio
 inicial = True # Para inicializar la primera conjuncion
 
 for p in letrasProposicionales:
-    aux1 = [x for x in letrasProposicionales if x != p] # Todas las letras excepto
-    # print "aux1: ", aux1
+    aux1 = [x for x in letrasProposicionales if x != p] # Todas las letras excepto p
     for q in aux1:
         aux2 = [x for x in aux1 if x != q] # Todas las letras excepto p y q
-        # print "aux2", aux2
         for r in aux2:
-            literal = r + q + p + 'Y' + 'Y'
-            aux3 = [x + '-' for x in aux2 if x != r]
-            for k in aux3:
-                literal = k + literal + 'Y'
-            # print "Literal: ", literal
-            if inicial: # Inicializar la primera conjuncion
-                conjunciones = literal
-                inicial = False
-            else:
-                conjunciones = literal + conjunciones + 'O'
-
-        # print "Conjunciones: ", conjunciones
+            aux3=[x for x in aux2 if x != r]# Todas las letras excepto p, q y r
+            for s in aux3:
+                aux4 = [x for x in aux3 if x != s] # Todas las letras excepto p,q,r y s
+                for t in aux4:
+                    aux5 = [x for x in aux4 if x != t] # Todas las letras excepto p,q,r,s y t
+                    for u in aux5:
+                        aux6 = [x for x in aux5 if x!=u] # Todas las letras excepto p,q,r,s,t y u
+                        for v in aux6:
+                            aux7 = [x for x in aux6 if x != v] # Todas las letras excepto p,q,r,s,t,u y v
+                            for w in aux7:
+                                literal = w+v+u+t+s+r+q+p+'Y'+'Y'+'Y'+'Y'+'Y'+'Y'+'Y'
+                                aux8 = [x+'-' for x in aux7 if x != w]# Todas las letras excepto p,q,r,s,t,u,v y w
+                                for x in aux8:
+                                    literal = x + literal + 'Y' # concatena las letras proposicionales restantes agregandoles una negacion y un 'Y'
+                                if inicial:
+                                    conjunciones = literal
+                                    inicial = False
+                                else:
+                                    conjunciones = literal + conjunciones + 'O' # Concatena las posibles formulas con una 'O'
+                                    # print "Conjunciones: ", conjunciones
 
 # Regla 2: Ninguna reina debe poder atacar a otra
 
