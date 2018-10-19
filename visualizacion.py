@@ -17,7 +17,7 @@
 # Requiere tambien un numero natural, para servir de indice del tablero,
 # toda vez que puede solicitarse visualizar varios tableros.
 
-# Salida: archivo tablero_%i.png, donde %i es un numero natural
+# Salida: archivo tablero_%i.png, donde %i es un numero natural.
 
 
 def dibujar_tablero(f, n):
