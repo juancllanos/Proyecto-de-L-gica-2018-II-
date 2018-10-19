@@ -13,7 +13,7 @@ class Tree(object):
 		self.label = label
 
 def Inorder(f):
-    # Imprime una formula como cadena dada una formula como arbol
+    # Imprime una fórmula como cadena dada una fórmula como arbol
     # Input: tree, que es una formula de logica proposicional
     # Output: string de la formula
 
