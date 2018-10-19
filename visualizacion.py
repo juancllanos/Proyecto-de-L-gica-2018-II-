@@ -14,10 +14,10 @@
 
 # Formato de la entrada: - las letras proposionales seran: 1, ..., 64;
 #                        - solo se aceptan literales (ej. 1, ~2, 3, ~4, etc.)
-# Requiere tambien un numero natural, para servir de indice del tablero,
+# Requiere tambien un número natural, para servir de indice del tablero,
 # toda vez que puede solicitarse visualizar varios tableros.
 
-# Salida: archivo tablero_%i.png, donde %i es un numero natural.
+# Salida: archivo dama_%i.png, donde %i es un numero natural.
 
 
 def dibujar_tablero(f, n):
