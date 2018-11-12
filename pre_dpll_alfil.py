@@ -91,7 +91,7 @@ while OK:
         print "No se aplicó deMorgan"
         OK = False
 
-
+OK = True
 while OK:
     OK, A = T.aplicaDistributiva(A)
 
